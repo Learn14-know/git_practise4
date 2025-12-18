@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: java-webapp
+spec:
+  type: LoadBalancer
+  selector:
+    app: java-webapp
+    color: blue
+  ports:
+    - port: 80
+      targetPort: {{ .Values.containerPort }}
