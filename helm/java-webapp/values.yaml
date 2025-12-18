@@ -1,0 +1,20 @@
+image:
+  repository: acrterraform123456789.azurecr.io/java-webapp
+  tag: latest
+
+containerPort: 8080
+
+replicas:
+  min: 2
+  max: 5
+
+resources:
+  requests:
+    cpu: "250m"
+    memory: "512Mi"
+  limits:
+    cpu: "500m"
+    memory: "1Gi"
+
+hpa:
+  cpuUtilization: 70
